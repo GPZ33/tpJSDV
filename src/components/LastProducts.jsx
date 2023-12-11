@@ -1,4 +1,3 @@
-import './App.css';
 const LastProducts = ({productsProp}) => {
     const LastProducts = productsProp.slice(-5);
     return (
@@ -6,8 +5,8 @@ const LastProducts = ({productsProp}) => {
             <h2>Les derniers produits :</h2>
             {LastProducts.map((product) => {
                 return (
-                    <article>
-                        <h3>{product.title}</h3>
+                    <article className="article">
+                        <h3> {product.title} </h3>
                         <p>{product.price} €</p>
                     </article>
                 );

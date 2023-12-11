@@ -1,4 +1,3 @@
-import './App.css';
 const BestArticle = ({ productsProp }) => {
 
     const bestArticle = productsProp.filter((product) => {
@@ -9,8 +8,9 @@ const BestArticle = ({ productsProp }) => {
         <section>
             {bestArticle.map((product) => {
                 return (
-                    <article>
-                        <h3>Le meilleur produit : {product.title}</h3>
+                    <article className='article'>
+                        <h3>Le meilleur produit : </h3>
+                        <p>{product.title}</p>
                     </article>
                 );
             })}

@@ -1,67 +1,22 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-import Header from './Header';
-import BestArticle from './BestArticle';
-import LastProducts from './LastProducts';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Product from "./pages/Product";
+import CGV from "./pages/CGV";
 
 function App() {
-  const products = [
-    {
-      id: 1, title: "Canapé cuir",
-      price: 1000,
-      rating: 4.5,
-      isPublished: true,
-    },
-    {
-      id: 2,
-      title: "Canapé tissu",
-      price: 800,
-      rating: 3.5,
-      isPublished: false,
-    },
-    {
-      id: 3,
-      title: "Canapé velours",
-      price: 1200,
-      rating: 5,
-      isPublished: true,
-    },
-    {
-      id: 4,
-      title: "Canapé lin",
-      price: 900,
-      rating: 2.5,
-      isPublished: false,
-    },
-    {
-      id: 5,
-      title: "Canapé cotton",
-      price: 900,
-      rating: 2.2,
-      isPublished: true,
-    },
-    {
-      id: 6,
-      title: "Canapé cuir de vache",
-      price: 600,
-      rating: 1.5,
-      isPublished: false,
-    },
-    {
-      id: 7,
-      title: "Canapé cuir de chèvre",
-      price: 700,
-      rating: 2,
-      isPublished: true,
-    }];
-  
     return (
-    <div className="App" >
-      <Header />
-      <BestArticle productsProp= {products}/>
-      <LastProducts productsProp= {products}/>
-    </div >
+    <>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/cgv" element={<CGV />} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
-}
-
+    }
 export default App;
