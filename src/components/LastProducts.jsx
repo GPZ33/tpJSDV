@@ -1,15 +1,17 @@
-const LastProducts = ({productsProp}) => {
-    const LastProducts = productsProp.slice(-5);
+import ProductCard from "./ProductCard";
+
+const LastProducts = ({ productsProp }) => {
+    const publishedProducts = productsProp.filter((product) => {
+        return product.isPublished === true;
+    });
+
+    const lastPublishedProducts = publishedProducts.slice(-3);
+
     return (
         <section>
-            <h2>Les derniers produits :</h2>
-            {LastProducts.map((product) => {
-                return (
-                    <article className="article">
-                        <h3> {product.title} </h3>
-                        <p>{product.price} €</p>
-                    </article>
-                );
+            <h2>Les derniers produits publiés : </h2>
+            {lastPublishedProducts.map((product) => {
+                return <ProductCard product={product} />;
             })}
         </section>
     );
